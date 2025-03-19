@@ -72,8 +72,17 @@ const Products = () => {
 
   return (
     <Layout>
-      <div className="container px-4 md:px-6 py-16 md:py-24">
+      {/* Background elements */}
+      <div className="absolute inset-0 -z-10 pointer-events-none overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-[30vh] bg-gradient-to-b from-secondary/30 via-secondary/10 to-transparent"></div>
+        <div className="absolute top-[15%] -left-[10%] w-[50%] h-[50%] rounded-full bg-secondary/20 blur-3xl"></div>
+        <div className="absolute top-[20%] right-[5%] w-[40%] h-[40%] rounded-full bg-secondary/10 blur-3xl"></div>
+        <div className="absolute bottom-[10%] left-[10%] w-[30%] h-[30%] rounded-full bg-secondary/15 blur-3xl"></div>
+      </div>
+
+      <div className="container px-4 md:px-6 py-16 md:py-24 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
+          <div className="bg-gradient-to-r from-primary/90 to-primary/70 bg-clip-text text-transparent inline-block mb-3">Discover Excellence</div>
           <h1 className="text-4xl font-medium md:text-5xl tracking-tight mb-6">Our Products</h1>
           <p className="text-muted-foreground text-lg">
             Explore our collection of thoughtfully designed products that combine beauty with functionality. Every detail matters.
