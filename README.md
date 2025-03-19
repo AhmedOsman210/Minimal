@@ -8,7 +8,8 @@ Minimal is a e comerce platfrom
 
 ![Screenshot 2025-03-19 140924](https://github.com/user-attachments/assets/91b4c6e1-c911-412f-adcd-6e8a60dc0194)
 
-ot 2025-03-19 140949](https://github.com/user-attachments/assets/2a8b2718-79ba-4a19-8664-13fa814667c6)
+![Screenshot 2025-03-19 140949](https://github.com/user-attachments/assets/fd9b1401-f8c1-40af-9d29-eec2942d8697)
+
 
 ![Screensh![Screenshot 2025-03-19 141012](https://github.com/user-attachments/assets/9ef39b90-e921-475c-a916-e12a5da99908)
 
