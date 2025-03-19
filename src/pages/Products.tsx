@@ -1,13 +1,10 @@
 
-import React, { useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Layout } from '@/components/Layout';
 import { ProductCard } from '@/components/ProductCard';
 import { cn } from '@/lib/utils';
 
-interface ProductShowcaseProps {
-  className?: string;
-}
-
+// Using the same products data from ProductShowcase component
 const products = [
   {
     id: 1,
@@ -67,59 +64,23 @@ const products = [
   }
 ];
 
-export function ProductShowcase({ className }: ProductShowcaseProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  
+const Products = () => {
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-slide-up');
-            entry.target.classList.remove('opacity-0');
-            entry.target.classList.add('opacity-100');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    
-    if (containerRef.current) {
-      const children = containerRef.current.children;
-      for (let i = 0; i < children.length; i++) {
-        observer.observe(children[i]);
-        // Set initial state
-        children[i].classList.add('opacity-0');
-        (children[i] as HTMLElement).style.transitionDelay = `${i * 0.1}s`;
-      }
-    }
-    
-    return () => {
-      if (containerRef.current) {
-        const children = containerRef.current.children;
-        for (let i = 0; i < children.length; i++) {
-          observer.unobserve(children[i]);
-        }
-      }
-    };
+    window.scrollTo(0, 0);
+    document.title = "Minimal - Our Products";
   }, []);
-  
+
   return (
-    <section className={cn("py-16 md:py-24", className)}>
-      <div className="container px-4 md:px-6">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-12">
-          <div>
-            <h2 className="text-3xl font-medium tracking-tight">Featured Products</h2>
-            <p className="mt-2 text-muted-foreground max-w-[600px]">
-              Discover our collection of thoughtfully designed products that combine beauty with functionality.
-            </p>
-          </div>
-          <Link to="/products" className="mt-4 md:mt-0 button-secondary">
-            View All
-          </Link>
+    <Layout>
+      <div className="container px-4 md:px-6 py-16 md:py-24">
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <h1 className="text-4xl font-medium md:text-5xl tracking-tight mb-6">Our Products</h1>
+          <p className="text-muted-foreground text-lg">
+            Explore our collection of thoughtfully designed products that combine beauty with functionality. Every detail matters.
+          </p>
         </div>
-        
-        <div ref={containerRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {products.map((product) => (
             <ProductCard
               key={product.id}
@@ -132,6 +93,8 @@ export function ProductShowcase({ className }: ProductShowcaseProps) {
           ))}
         </div>
       </div>
-    </section>
+    </Layout>
   );
-}
+};
+
+export default Products;
