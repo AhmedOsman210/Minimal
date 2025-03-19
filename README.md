@@ -1,8 +1,20 @@
-# Welcome to your Lovable project
+
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/a4f4ee04-0657-49da-ad02-43f069d635c6
+Minimal is a e comerce platfrom
+
+![Screenshot 2025-03-19 140908](https://github.com/user-attachments/assets/77fa2ac7-2615-4015-9d08-ebeb551c816e)
+
+![Screenshot 2025-03-19 140924](https://github.com/user-attachments/assets/91b4c6e1-c911-412f-adcd-6e8a60dc0194)
+
+ot 2025-03-19 140949](https://github.com/user-attachments/assets/2a8b2718-79ba-4a19-8664-13fa814667c6)
+
+![Screensh![Screenshot 2025-03-19 141012](https://github.com/user-attachments/assets/9ef39b90-e921-475c-a916-e12a5da99908)
+
+![Screenshot 2025-03-19 141026](https://github.com/user-attachments/assets/67b1f9f4-8728-4201-8740-7b4174435d74)
+
+
 
 ## How can I edit this code?
 
