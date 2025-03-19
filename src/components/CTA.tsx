@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
@@ -8,6 +8,19 @@ interface CTAProps {
 }
 
 export function CTA({ className }: CTAProps) {
+  const [email, setEmail] = useState('');
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      setSubmitted(true);
+      // In a real app, you would send this to your backend
+      console.log('Subscribed email:', email);
+      setEmail('');
+    }
+  };
+
   return (
     <section className={cn("py-16 md:py-24", className)}>
       <div className="container px-4 md:px-6">
@@ -22,21 +35,34 @@ export function CTA({ className }: CTAProps) {
               Stay updated with our latest products, design insights, and exclusive offers.
             </p>
             
-            <div className="mt-8 w-full max-w-md">
-              <div className="flex flex-col sm:flex-row gap-2">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 min-w-0 rounded-full px-4 py-2.5 bg-primary-foreground text-primary border-0 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-foreground/20"
-                />
-                <button className="button-secondary sm:flex-shrink-0 bg-primary-foreground text-primary hover:bg-primary-foreground/90">
-                  Subscribe
-                </button>
+            {submitted ? (
+              <div className="mt-8 p-4 bg-primary-foreground/10 rounded-lg">
+                <p className="text-primary-foreground font-medium">Thank you for subscribing!</p>
+                <p className="text-primary-foreground/80 text-sm mt-1">We'll be in touch with exclusive offers soon.</p>
               </div>
-              <p className="mt-2 text-xs text-primary-foreground/70">
-                By subscribing, you agree to our Privacy Policy and consent to receive updates.
-              </p>
-            </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="mt-8 w-full max-w-md">
+                <div className="flex flex-col sm:flex-row gap-2">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="flex-1 min-w-0 rounded-full px-4 py-2.5 bg-primary-foreground text-primary border-0 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-foreground/20"
+                    required
+                  />
+                  <button 
+                    type="submit" 
+                    className="button-secondary sm:flex-shrink-0 bg-primary-foreground text-primary hover:bg-primary-foreground/90"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+                <p className="mt-2 text-xs text-primary-foreground/70">
+                  By subscribing, you agree to our Privacy Policy and consent to receive updates.
+                </p>
+              </form>
+            )}
           </div>
         </div>
       </div>

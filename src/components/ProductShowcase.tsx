@@ -35,6 +35,34 @@ const products = [
     description: "Handcrafted ceramic with clean lines and perfect proportions.",
     image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?q=80&w=1000&auto=format&fit=crop",
     price: "$89"
+  },
+  {
+    id: 5,
+    title: "Echo Headphones",
+    description: "Noise-cancelling headphones with pristine audio quality.",
+    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1000&auto=format&fit=crop",
+    price: "$249"
+  },
+  {
+    id: 6,
+    title: "Serenity Chair",
+    description: "Ergonomic design meets contemporary aesthetics for ultimate comfort.",
+    image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=1000&auto=format&fit=crop",
+    price: "$399"
+  },
+  {
+    id: 7,
+    title: "Clarity Glasses",
+    description: "Lightweight frames with blue light filtering for digital life.",
+    image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=1000&auto=format&fit=crop",
+    price: "$129"
+  },
+  {
+    id: 8,
+    title: "Aura Diffuser",
+    description: "Essential oil diffuser with ambient light and minimal footprint.",
+    image: "https://images.unsplash.com/photo-1602910344079-28d7dbc45a38?q=80&w=1000&auto=format&fit=crop",
+    price: "$79"
   }
 ];
 
@@ -82,7 +110,7 @@ export function ProductShowcase({ className }: ProductShowcaseProps) {
           <div>
             <h2 className="text-3xl font-medium tracking-tight">Featured Products</h2>
             <p className="mt-2 text-muted-foreground max-w-[600px]">
-              Discover our collection of thoughtfully designed products.
+              Discover our collection of thoughtfully designed products that combine beauty with functionality.
             </p>
           </div>
           <a href="/products" className="mt-4 md:mt-0 button-secondary">

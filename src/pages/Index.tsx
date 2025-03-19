@@ -10,6 +10,7 @@ import { CTA } from '@/components/CTA';
 const Index = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    document.title = "Minimal - Beautifully Designed Products";
   }, []);
   
   return (
