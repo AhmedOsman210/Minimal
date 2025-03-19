@@ -1,7 +1,10 @@
+
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { Logo } from '@/components/Logo';
+import { ThemeToggle } from '@/components/ThemeToggle';
+import { LoginForm } from '@/components/LoginForm';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -39,6 +42,8 @@ export function Layout({ children, className }: LayoutProps) {
                 <path d="m21 21-4.3-4.3"></path>
               </svg>
             </button>
+            <ThemeToggle />
+            <LoginForm />
           </div>
         </div>
       </header>
